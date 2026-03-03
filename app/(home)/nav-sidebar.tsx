@@ -18,10 +18,17 @@ interface Props {
 }
 export const NavSidebar = ({items, open, onOpenChange}: Props) => {
     return (
-        <div>
         <Sheet open={open} onOpenChange={onOpenChange}>
-            <SheetContent side="left" className="p-0 transition-none"> 
+            <SheetContent side="left" className="p-0 transition-none">
+                <SheetHeader className="p-4 border-b">
+                    <div className="flex items-center space-x-4">
+                        <SheetTitle className="text-lg font-semibold">Navigation</SheetTitle>
+                    </div>
+                </SheetHeader>
+            </SheetContent>
         </Sheet>
-        </div>
+        
+
+       
     );
 };

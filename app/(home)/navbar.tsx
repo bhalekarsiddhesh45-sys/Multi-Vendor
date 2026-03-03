@@ -1,9 +1,11 @@
 
+import React from "react";
 import Link from "next/link";
 import {Poppins} from "next/font/google";
 import {Button} from "@/components/ui/button";
 import {cn} from "@/lib/utils";
 import { Dice1 } from "lucide-react";
+import { NavSidebar } from "./nav-sidebar";
 //import { usePathname } from "next/navigation";
 
 const poppins = Poppins({
@@ -43,6 +45,8 @@ const navbarItems = [
 //export const navbar = () => {
 
 export const Navbar = () => {
+    const [open, setOpen] = React.useState(True);
+
     return (
         <nav className="h-20 flex border-b justify-between font-medium bg-white">
             <Link href="/" className="pl-6 flex items-center">
@@ -50,6 +54,7 @@ export const Navbar = () => {
                  Silicon Friends
             </span>
             </Link>
+        <NavSidebar items={navbarItems} open={open} onOpenChange={setOpen}/>
 
             <div className="items-center gap-4 hidden lg:flex">
                 {navbarItems.map((item) => (
